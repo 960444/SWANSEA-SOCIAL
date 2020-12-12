@@ -1,0 +1,8 @@
+{
+  "name": "COVID-TRACKER",
+  "version": "1.0.0",
+  "description": "Public transport covid tracker ",
+  "main": "index.js",
+  "author": "Bartlomiej Kakol",
+  "license": "MIT"
+}
