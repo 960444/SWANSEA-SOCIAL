@@ -1,7 +1,7 @@
 {
-  "name": "COVID-TRACKER",
+  "name": "MERN-SOCIAL",
   "version": "1.0.0",
-  "description": "Public transport covid tracker ",
+  "description": "MERN Stack Social Media App ",
   "main": "index.js",
   "author": "Bartlomiej Kakol",
   "license": "MIT",
