@@ -1,13 +1,9 @@
-import config from './../config/config'
+import config from '../config/config'
 import app from './express'
-import mongoose from 'mongoose'
+import Database from './database'
 
 //Connect database
-mongoose.Promise = global.Promise
-mongoose.connect(config.mongoUri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
-mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${config.mongoUri}`)
-})
+const db = new Database()
 
 //Start the server
 app.listen(config.port, (err) => {

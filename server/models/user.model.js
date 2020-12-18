@@ -50,7 +50,6 @@ UserSchema
     this._password = password
     this.salt = this.makeSalt()
     this.hashed_password = this.encryptPassword(password)
-    console.log(this.hashed_password)
   })
   .get(function() {
     return this._password
@@ -65,7 +64,12 @@ UserSchema.path('hashed_password').validate(function(v) {
         this.invalidate('password', 'Password must be less than 65 characters.')
     }
     if (this.isNew && !this._password) {
-        this.invalidate('password', 'Password is required')
+        this.invalidate('password', 'Password is required.')
+    }
+    if (this._password.search(/\d/) == -1 
+        || this._password.search(/[a-zA-Z]/) == -1) {
+        this.invalidate('password', 'Password must be a combination of letters and numbers.')  
+    
     }
   }, null)
   
